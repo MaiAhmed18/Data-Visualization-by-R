@@ -1,0 +1,25 @@
+---
+title: "Lab 6"
+author: "Mai"
+date: "1/30/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidyr)
+library(ggplot2)
+```
+
+
+```{r}
+
+ggplot(mpg,mapping = aes(x = displ , y = hwy ,shape = drv ,color = drv)) +
+   geom_point() +
+  geom_smooth( aes(linetype = drv),method ="lm" , se = FALSE  ) +
+  labs(x="Displacement",y = "Highway miles" , title = "Car Engine Displacement VS Highway miles" , color = "Drive Type" , shape = "Drive Type",linetype = "Drive Type") 
+
+
+```
+
